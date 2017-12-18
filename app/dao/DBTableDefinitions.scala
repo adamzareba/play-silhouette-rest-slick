@@ -13,7 +13,7 @@ trait DBTableDefinitions {
   case class DBUser(id: String, firstName: String, lastName: String, email: String, avatarURL: Option[String], activated: Option[Boolean])
 
   class Users(tag: Tag) extends Table[DBUser](tag, "USER") {
-    def id = column[String]("USER_ID", O.PrimaryKey)
+    def id = column[String]("ID", O.PrimaryKey)
     def firstName = column[String]("FIRST_NAME")
     def lastName = column[String]("LAST_NAME")
     def email = column[String]("EMAIL")

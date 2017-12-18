@@ -10,11 +10,13 @@ val silhouetteVersion = "5.0.2"
 val playMailerVersion = "6.0.1"
 val playJsonVersion = "2.6.8"
 val swaggerUIVersion = "3.6.1"
+val slickVersion = "3.0.1"
+val h2Version = "1.4.196"
 
 libraryDependencies ++= Seq(
-  "com.typesafe.play" %% "play-slick" % "3.0.1",
-  "com.typesafe.play" %% "play-slick-evolutions" % "3.0.1",
-  "com.h2database" % "h2" % "1.4.196",
+  "com.typesafe.play" %% "play-slick" % slickVersion,
+  "com.typesafe.play" %% "play-slick-evolutions" % slickVersion,
+  "com.h2database" % "h2" % h2Version,
   "com.mohiva" %% "play-silhouette" % silhouetteVersion,
   "com.mohiva" %% "play-silhouette-persistence" % silhouetteVersion,
   "com.mohiva" %% "play-silhouette-password-bcrypt" % silhouetteVersion,
