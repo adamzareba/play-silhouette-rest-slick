@@ -10,17 +10,17 @@ trait DBTableDefinitions {
 
   import profile.api._
 
-  case class DBUser(id: String, firstName: String, lastName: String, email: String, avatarURL: Option[String], activated: Option[Boolean])
+  case class DBUser(id: Option[Long], firstName: String, lastName: String, email: String, avatarURL: Option[String], activated: Option[Boolean])
 
   class Users(tag: Tag) extends Table[DBUser](tag, "USER") {
-    def id = column[String]("ID", O.PrimaryKey)
+    def id = column[Long]("ID", O.PrimaryKey, O.AutoInc)
     def firstName = column[String]("FIRST_NAME")
     def lastName = column[String]("LAST_NAME")
     def email = column[String]("EMAIL")
     def avatarURL = column[Option[String]]("AVATAR_URL")
     def activated = column[Option[Boolean]]("ACTIVATED")
 
-    def * = (id, firstName, lastName, email, avatarURL, activated) <> (DBUser.tupled, DBUser.unapply)
+    def * = (id.?, firstName, lastName, email, avatarURL, activated) <> (DBUser.tupled, DBUser.unapply)
   }
 
   case class DBLoginInfo(id: Option[Long], providerID: String, providerKey: String)
@@ -33,10 +33,10 @@ trait DBTableDefinitions {
     def * = (id.?, providerId, providerKey) <> (DBLoginInfo.tupled, DBLoginInfo.unapply)
   }
 
-  case class DBUserLoginInfo(userID: String, loginInfoId: Long)
+  case class DBUserLoginInfo(userID: Long, loginInfoId: Long)
 
   class UserLoginInfos(tag: Tag) extends Table[DBUserLoginInfo](tag, "USER_LOGIN_INFO") {
-    def userId = column[String]("USER_ID")
+    def userId = column[Long]("USER_ID")
     def loginInfoId = column[Long]("LOGIN_INFO_ID")
 
     def * = (userId, loginInfoId) <> (DBUserLoginInfo.tupled, DBUserLoginInfo.unapply)

@@ -1,12 +1,11 @@
 package controllers
 
-import java.util.UUID
 import javax.inject.Inject
 
+import com.mohiva.play.silhouette.api._
 import com.mohiva.play.silhouette.api.repositories.AuthInfoRepository
 import com.mohiva.play.silhouette.api.services.AvatarService
 import com.mohiva.play.silhouette.api.util.{Clock, PasswordHasherRegistry}
-import com.mohiva.play.silhouette.api._
 import com.mohiva.play.silhouette.impl.providers.CredentialsProvider
 import formatters.json.{CredentialFormat, Token}
 import io.swagger.annotations.{Api, ApiImplicitParam, ApiImplicitParams, ApiOperation}
@@ -56,7 +55,7 @@ class SignUpController @Inject()(components: ControllerComponents,
       val loginInfo = LoginInfo(CredentialsProvider.ID, signUp.identifier)
       userService.retrieve(loginInfo).flatMap {
         case None => /* user not already exists */
-          val user = User(Option(UUID.randomUUID().toString.replaceAll("-", "")), loginInfo, loginInfo.providerKey, signUp.email, signUp.firstName, signUp.lastName, None, true)
+          val user = User(None, loginInfo, loginInfo.providerKey, signUp.email, signUp.firstName, signUp.lastName, None, true)
           // val plainPassword = UUID.randomUUID().toString.replaceAll("-", "")
           val authInfo = passwordHasherRegistry.current.hash(signUp.password)
           for {
