@@ -67,8 +67,7 @@ curl http://localhost:9000/badPassword -H 'X-Auth-Token:eyJ0eXAiOiJKV1QiLCJhbGci
 
 ## Database reload
 
-It is possible to reload database with based data with scripts:
-[recreate.bat](database/recreate.bat) or [recreate.sh](database/recreate.sh)
+Slick evolutions are responsible for data reloading.
 
 ## API documentation
 
