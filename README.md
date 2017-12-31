@@ -1,10 +1,6 @@
-Silhouette REST Slick Seed
-=================================
+# `Silhouette REST Slick Seed` [![Build Status](https://travis-ci.org/adamzareba/play-silhouette-rest-slick.svg)](https://travis-ci.org/adamzareba/play-silhouette-rest-slick) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/6e8dae3c1bf346428db76e782ae68c41)](https://www.codacy.com/app/adamzareba/play-silhouette-rest-slick?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=adamzareba/play-silhouette-rest-slick&amp;utm_campaign=Badge_Grade)
 
 Example project for Play Framework that uses [Silhouette](https://github.com/mohiva/play-silhouette) for authentication and authorization, exposed REST API for sign-up, sign-in.
-
-[![Build Status](https://travis-ci.org/adamzareba/play-silhouette-rest-slick.svg)](https://travis-ci.org/adamzareba/play-silhouette-rest-slick)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6e8dae3c1bf346428db76e782ae68c41)](https://www.codacy.com/app/adamzareba/play-silhouette-rest-slick?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=adamzareba/play-silhouette-rest-slick&amp;utm_campaign=Badge_Grade)
 
 ## Basic usage
 
