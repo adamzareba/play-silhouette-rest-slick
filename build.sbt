@@ -6,7 +6,7 @@ lazy val `play-silhouette-rest-slick` = (project in file(".")).enablePlugins(Pla
 scalacOptions ++= Seq("-deprecation", "-language:_")
 
 scalaVersion := "2.12.6"
-val silhouetteVersion = "5.0.3"
+val silhouetteVersion = "5.0.4"
 val playMailerVersion = "6.0.1"
 val playJsonVersion = "2.6.8"
 val swaggerUIVersion = "3.6.1"
